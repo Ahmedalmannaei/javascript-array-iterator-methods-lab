@@ -89,32 +89,62 @@ const inventors = [
   const veryOldInventors = inventors.filter((inventor,i)=>{
     return inventor.year > 1500 && inventor.year < 1599
   });
-  console.log(veryOldInventors);
+  console.log('Exercise 1 my result: ', veryOldInventors);
 
   //Excercise 2
 
   let inventorNames = inventors.map((inventor)=>{
     return { first: inventor.first,last: inventor.last};
   });
-  console.log(inventorNames);
+  console.log('Exercise 2 my result: ', inventorNames);
 
   //Excercise 3
 
   let sortedByYear = inventors.sort((a,b)=>{
     return parseFloat(a.year) - parseFloat(b.year);
   });
-  console.log(sortedByYear);
+  console.log('Exercise 3 my result: ', sortedByYear);
 
   //Excercise 4
 
   let inventorNamedAda = inventors.find((inventor)=>{
     return inventor.first === 'Ada';
   })
-  console.log(inventorNamedAda);
-
+  console.log('Exercise 4 my result: ', inventorNamedAda);
   //Excercise 5
   const firstLast = people.map((person,i)=>{
     const [last,first] = person.split(",");
     return `${first} ${last}`
   })
-  console.log(firstLast);
+  console.log('Exercise 5 my result: ', firstLast);
+  //Excercise 6
+
+  const isAdultPresent = devs.some((dev)=>{
+    return 2025 - dev.year > 18;
+  })
+  console.log('Exercise 6 my result: ', isAdultPresent);
+
+  //Excercise 7 
+
+  const isEveryone19OrOlder = devs.every((dev)=>{
+    return 2025 - dev.year >=19;
+  });
+  console.log('Exercise 7 my result: ', isEveryone19OrOlder);
+
+  //Excercise 8
+
+  const commentByID = comments.find((comment)=>{
+    return comment.id === 823423
+  });
+
+  console.log('Exercise 8 my result: ', commentByID);
+
+  //Excercise 9
+
+  let idx = null;
+
+  const commentIDX = comments.findIndex((comment,i)=>{
+    return comment.id === 123523
+  });
+  idx = commentIDX;
+  console.log('Exercise 9 my result: ', idx);
